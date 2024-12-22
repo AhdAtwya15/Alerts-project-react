@@ -1,0 +1,1 @@
+export type alertTypes="upgrade-alert"|"note-alert"|"error-alert"|"success-alert"|"tips-alert"

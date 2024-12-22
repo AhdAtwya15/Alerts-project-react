@@ -1,0 +1,64 @@
+/*upgradeColor*/
+$upgrade-bg:rgba(255, 255, 255, 0);
+$upgrade-border:white;
+$upgrade-color:#fff;
+
+/*noteColor*/
+$note-bg:rgba(11, 11, 72, 0.147);
+$note-border:rgb(12, 12, 105);
+$note-color:rgb(85, 85, 151);
+
+/*errorColor*/
+$error-bg:rgba(154, 28, 28, 0.122);
+$error-border:rgb(154, 28, 28);
+$error-color:rgb(161, 65, 65);
+
+/*successColor*/
+$success-bg:rgba(14, 133, 14, 0.121);
+$success-border:rgb(14, 133, 14);
+$success-color:rgb(10, 145, 10);
+
+/*tipsColor*/
+$tips-bg:rgba(235, 235, 92, 0.09);
+$tips-border:rgb(235, 235, 92);
+$tips-color:rgb(223, 223, 112);
+
+@mixin alertUi($name,$alert-bg,$alert-border,$alert-color){
+    .#{$name}{
+        background-color: $alert-bg;
+        border: 1px dashed $alert-border;
+        border-radius: 7px;
+        padding: 20px;
+        color:$alert-color ;
+    
+        .alert-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        
+            .alert-title{
+                display: flex;
+                gap: 10px;
+                span svg{
+                    margin-top: 5px;
+                }
+            }
+            .close-icon{
+                cursor: pointer;
+            }
+        }
+        p{
+            padding: 10px;
+        }
+    
+    }
+}
+.alert-box{
+    width: 80%;
+    margin:20px auto;
+}
+@include alertUi("upgrade-alert", $upgrade-bg, $upgrade-border,$upgrade-color);
+@include alertUi("note-alert", $note-bg, $note-border,$note-color);
+@include alertUi("error-alert", $error-bg, $error-border,$error-color);
+@include alertUi("success-alert", $success-bg, $success-border,$success-color);
+@include alertUi("tips-alert", $tips-bg, $tips-border,$tips-color);
